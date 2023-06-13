@@ -1,4 +1,4 @@
-package src;
+package com.example;
 
 public class Unit {
     private float temperature;
@@ -15,5 +15,13 @@ public class Unit {
 
     public float getHumidity() {
         return this.humidity;
+    }
+
+    public void setTempereture(float temperature) {
+        this.temperature = temperature;
+    }
+
+    public void setHumidity(float humidity) {
+        this.humidity = humidity;
     }
 }

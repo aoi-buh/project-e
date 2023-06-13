@@ -1,4 +1,4 @@
-package src;
+package unused;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -113,7 +113,7 @@ public class LinkedList<E> {
 			output.add(iterator.next());
 		}
 
-		return (E[]) output.toArray();		// Doesn't have a better solution due to language problem as far as I know.
+		return (E[]) output.toArray();		// Doesn't have a better solution due to language limitation as far as I know.
 											// The ArrayList should only ever be able to contain elements of type E so this should be safe.
 	}
 }

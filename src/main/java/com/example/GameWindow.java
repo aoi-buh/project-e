@@ -1,4 +1,4 @@
-package src;
+package com.example;
 
 import java.awt.Color;
 import java.awt.Graphics;
