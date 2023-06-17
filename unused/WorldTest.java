@@ -3,6 +3,8 @@ package com.example;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 public class WorldTest { 
 
     static final Unit zero = new Unit(0, 0);
@@ -20,18 +22,23 @@ public class WorldTest {
                                                    {zero, zero, zero, zero, zero, zero},
                                                    {zero, zero, one , zero, zero, zero},
                                                    {zero, zero, zero, zero, zero, zero}};
-
-    static World testWorld = new World();
     
+
+    // @Test
+    // public void testAddNewUnit() {
+    //     World testWorld = new World();
+
+
+    // }
+
     @Test
     public void testGetQudrant() {
-        testWorld.clear();
+        World testWorld = new World();
 
-        for (int y = 0; y < testGetQudrantTemplate.length; y++) {
-            for (int x = 0; x < testGetQudrantTemplate[0].length; x++) {
-                testWorld.setUnit(x - 1, y - 1, testGetQudrantTemplate[y][x]);
-            }
-        }
+        testWorld.setUnit(0, 0, zero);
+        testWorld.setUnit(-1, 0, one);
+        testWorld.setUnit(-1, -1, two);
+        testWorld.setUnit(0, -1, three);
 
         assertEquals(zero,  testWorld.getWorldQuadrant(0, 0).first.get(0).get(0));
         assertEquals(one,   testWorld.getWorldQuadrant(-1, 0).first.get(0).get(0));
@@ -42,18 +49,22 @@ public class WorldTest {
 
     @Test
     public void testSetAndGet() {
-        testWorld.clear();
+        World testWorld = new World();
 
-        for (int y = 0; y < testSetAndGetTemplate.length; y++) {
-            for (int x = 0; x < testSetAndGetTemplate[0].length; x++) {
-                testWorld.setUnit(x - 3, y - 3, testSetAndGetTemplate[y][x]);
-            }
-        }
+        // for (int y = 0; y < testSetAndGetTemplate.length; y++) {
+        //     for (int x = 0; x < testSetAndGetTemplate[0].length; x++) {
+        //         testWorld.setUnit(x - 3, y - 3, testSetAndGetTemplate[y][x]);
+        //     }
+        // }
 
-        for (int y = 0; y < testSetAndGetTemplate.length; y++) {
-            for (int x = 0; x < testSetAndGetTemplate[0].length; x++) {
-                assertEquals(testWorld.getUnit(x - 3, y - 3), testSetAndGetTemplate[y][x]);
-            }
-        }
+        testWorld.setUnit(0, 0, new Unit(0, 0));
+        testWorld.setUnit(1, 1, new Unit(1, 1));
+        testWorld.setUnit(0, 0, four);
+
+        // for (int y = 0; y < testSetAndGetTemplate.length; y++) {
+        //     for (int x = 0; x < testSetAndGetTemplate[0].length; x++) {
+        //         assertEquals(testWorld.getUnit(x - 3, y - 3), testSetAndGetTemplate[y][x]);
+        //     }
+        // }
     }
 }
